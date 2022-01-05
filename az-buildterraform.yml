@@ -1,0 +1,25 @@
+jobs:
+- job: validate and apply
+  continueOnError: false
+  steps:
+  - task:
+    inputs:
+      terraformVersion: '0.12.26'
+  - task: TerraformCLI@0
+    displayName: 'terraform init'
+    inputs:
+      command: init
+  - task: TerraformCLI@0
+    displayName: 'terraform validate'
+    inputs:
+      command: validate
+  - task:  TerraformCLI@0
+    displayName: 'terraform plan'
+    inputs:
+      command: plan
+      AzserviceConnection: 'connectionname'
+  - task:  TerraformCLI@0
+    displayName: 'terraform apply'
+    inputs:
+      command: apply
+      AzserviceConnection: 'connectionname'
