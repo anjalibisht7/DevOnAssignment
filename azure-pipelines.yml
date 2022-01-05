@@ -19,7 +19,7 @@ jobs:
   pool:
     vmImage: vs2017-win2016
 
-steps:
-- checkout: self
-- script: echo Hello, world!
-  displayName: 'Run Script'
+  steps:
+  - checkout: self
+  - script: echo Hello, world!
+    displayName: 'Run Script'
