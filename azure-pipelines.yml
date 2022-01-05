@@ -18,7 +18,7 @@ jobs:
   displayName: Agent job 1
   pool:
     name: Azure Pipelines
-    vmImage: vs2017-win2016
+    vmImage: 'vs2017-win2016'
 
   steps:
   - checkout: self
